@@ -1,0 +1,7 @@
+version: '1'
+
+services:
+  myApp:
+    image: 'transfermoneyapp:latest'
+    ports:
+      - '5500:5500'
