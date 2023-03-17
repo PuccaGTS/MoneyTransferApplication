@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.netology.moneytransferapplication.exception.TransferException;
 import ru.netology.moneytransferapplication.exception.WrongInputException;
-import ru.netology.moneytransferapplication.model.UnSucccessResp;
+import ru.netology.moneytransferapplication.model.ErrorTransferDto;
 
 @RestControllerAdvice
-public class ApplicationExceptionHandler {
+public class GlobalExceptionHandler {
     @ExceptionHandler(TransferException.class)
-    public ResponseEntity<UnSucccessResp> transferExceptionHandler(TransferException e) {
-        return new ResponseEntity<>(new UnSucccessResp(e.getMessage(), e.getId()), HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<ErrorTransferDto> transferExceptionHandler(TransferException e) {
+        return new ResponseEntity<>(new ErrorTransferDto(e.getMessage(), e.getId()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(WrongInputException.class)
-    public ResponseEntity<UnSucccessResp> wrongInputExceptionHandler(WrongInputException e) {
-        return new ResponseEntity<>(new UnSucccessResp(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<ErrorTransferDto> wrongInputExceptionHandler(WrongInputException e) {
+        return new ResponseEntity<>(new ErrorTransferDto(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
     }
 }

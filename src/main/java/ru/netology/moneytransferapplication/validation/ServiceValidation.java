@@ -12,25 +12,25 @@ public class ServiceValidation {
     public void validTransferService(Operation operation, String id) {
         if (operation == null) {
             log.error("Ошибка операции: операция не определена");
-            throw new TransferException("Transfer is not available", String.valueOf(id));
+            throw new TransferException("Transfer is not available", id);
         }
-        if (operation.getCardToNumber() == null) {
+        if (operation.cardToNumber() == null) {
             log.error("Карта списания не заполнена");
             throw new WrongInputException("CardTo number is empty", id);
         }
-        if (operation.getCardFromNumber() == null) {
+        if (operation.cardFromNumber() == null) {
             log.error("Карта зачисления не заполнена");
             throw new WrongInputException("CardFrom number is empty", id);
         }
-        if (operation.getCardFromCVV() == null) {
+        if (operation.cardFromCVV() == null) {
             log.error("CVV не заполнен");
             throw new WrongInputException("Card CVV is empty", id);
         }
-        if (operation.getCardFromValidTill() == null) {
+        if (operation.cardFromValidTill() == null) {
             log.error("Указана неверная дата карты списания");
             throw new WrongInputException("CardFromValidTill is empty", id);
         }
-        if (operation.getAmount().getValue() == 0) {
+        if (operation.amount().value() == 0) {
             log.error("Не указана сумма списания");
             throw new WrongInputException("Money transfer value is 0", id);
         }
@@ -41,12 +41,12 @@ public class ServiceValidation {
             log.info("Ошибка подтверждения операции");
             throw new TransferException("Error transfer, confirmation is null", null);
         }
-        String id = operationConfirmation.getOperationId();
+        String id = operationConfirmation.operationId();
         if (id == null) {
             log.error("Неправльный id операции");
-            throw new WrongInputException("Wrong Input OperationId, id = null", null);
+            throw new WrongInputException("Wrong Input OperationId", null);
         }
-        if (!(operationConfirmation.getCode().equals("0000"))) {
+        if (!(operationConfirmation.code().equals("0000"))) {
             log.error("Неправльный код подтвержедния операции");
             throw new WrongInputException("Bad code of Operation", id);
         }
