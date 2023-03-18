@@ -2,6 +2,7 @@ package ru.netology.moneytransferapplication.handler;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,11 +15,12 @@ import java.util.stream.Stream;
 public class GlobalExceptionHandlerTest {
     GlobalExceptionHandler globalExceptionHandler;
     @BeforeEach
-    public void init_exception_handler(){
+    public void initExceptionHandler(){
         globalExceptionHandler = new GlobalExceptionHandler();
     }
     @ParameterizedTest
     @MethodSource("transferExceptionHandlerArguments")
+    @DisplayName("Проверка соответствия кода ошибки 500 при перехвате хэндлером TransferException")
     public void transferExceptionHandlerTest(TransferException e){
         ResponseEntity responseEntity = globalExceptionHandler.transferExceptionHandler(e);
         String result = responseEntity.getStatusCode().toString();
@@ -27,6 +29,7 @@ public class GlobalExceptionHandlerTest {
     }
     @ParameterizedTest
     @MethodSource("wrongInputExceptionHandlerArguments")
+    @DisplayName("Проверка соответствия кода ошибки 400 при перехвате хэндлером WrongInputException")
     public void wrongInputExceptionTest(WrongInputException e){
         ResponseEntity responseEntity = globalExceptionHandler.wrongInputExceptionHandler(e);
         String result = responseEntity.getStatusCode().toString();
