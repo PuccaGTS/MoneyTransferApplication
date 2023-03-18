@@ -18,13 +18,13 @@ public class TransferServiceImpl implements TransferService {
     public String transfer(Operation operation) {
         String id = transferRepository.save(operation);
         serviceValidation.validTransferService(operation, id);
-        log.info("Операция: " + operation + "сохранена под id: " + id + ". Ожидаается подтверждение.........");
+        log.info(String.format("Операция: %s сохранена под id: %s", operation, id));
         return id;
     }
 
     public String confirmOperation(OperationConfirmation operationConfirmation) {
         serviceValidation.validConfirmOperationService(operationConfirmation);
-        log.info("Операция с id: " + operationConfirmation.getOperationId() + " подтверждена. Перевод выполнен успешно");
-        return transferRepository.checkOperation(operationConfirmation);
+        log.info(String.format("Операция с id: %s подтверждена. Перевод выполнен успешно", operationConfirmation.operationId()));
+        return operationConfirmation.operationId();
     }
 }

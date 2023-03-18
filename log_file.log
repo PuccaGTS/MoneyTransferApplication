@@ -68,3 +68,69 @@
 2023-03-15 23:33:02 INFO  TransferServiceImpl:27 - Операция с id: 10 подтверждена. Перевод выполнен успешно
 2023-03-15 23:33:02 ERROR ServiceValidation:50 - Неправльный код подтвержедния операции
 2023-03-15 23:33:02 INFO  TransferServiceImpl:21 - Операция:  | Карта списания: 1234123412341234 | Карта зачисления: 4321432143214321 | Сумма: 1000 | Комиссия: 10сохранена под id: 1. Ожидаается подтверждение.........
+2023-03-17 23:40:55 INFO  TransferServiceImpl:21 - Операция: Operation[cardFromNumber=1234123412341234, cardFromValidTill=12/24, cardFromCVV=234, cardToNumber=4321432143214321, amount=Amount[value=1000, currency=rub]] сохранена под id: 1
+2023-03-17 23:41:32 INFO  TransferRepositoryImpl:20 - Объект Operation[cardFromNumber=1234123123123123, cardFromValidTill=12/31, cardFromCVV=123, cardToNumber=1231231231312313, amount=Amount[value=12321300, currency=RUR]] сохранен в репозиторий под id: 1
+2023-03-17 23:41:32 INFO  TransferServiceImpl:21 - Операция: Operation[cardFromNumber=1234123123123123, cardFromValidTill=12/31, cardFromCVV=123, cardToNumber=1231231231312313, amount=Amount[value=12321300, currency=RUR]] сохранена под id: 1
+2023-03-17 23:41:32 INFO  TransferServiceImpl:27 - Операция с id: 1 подтверждена. Перевод выполнен успешно
+2023-03-18 00:18:12 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:18:12 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:18:13 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:35 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:35 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:35 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:48 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:48 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:20:48 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:28:04 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:28:04 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:28:04 ERROR ServiceValidation:14 - Ошибка операции: операция не определена
+2023-03-18 00:28:08 ERROR ServiceValidation:18 - Карта списания не заполнена
+2023-03-18 00:28:08 ERROR ServiceValidation:18 - Карта списания не заполнена
+2023-03-18 00:28:08 ERROR ServiceValidation:18 - Карта списания не заполнена
+2023-03-18 00:29:48 ERROR ServiceValidation:22 - Карта зачисления не заполнена
+2023-03-18 00:29:48 ERROR ServiceValidation:22 - Карта зачисления не заполнена
+2023-03-18 00:29:48 ERROR ServiceValidation:22 - Карта зачисления не заполнена
+2023-03-18 00:31:35 ERROR ServiceValidation:26 - CVV не заполнен
+2023-03-18 00:31:35 ERROR ServiceValidation:26 - CVV не заполнен
+2023-03-18 00:31:35 ERROR ServiceValidation:26 - CVV не заполнен
+2023-03-18 00:33:18 ERROR ServiceValidation:30 - Указана неверная дата карты списания
+2023-03-18 00:33:18 ERROR ServiceValidation:30 - Указана неверная дата карты списания
+2023-03-18 00:33:18 ERROR ServiceValidation:30 - Указана неверная дата карты списания
+2023-03-18 00:34:55 ERROR ServiceValidation:34 - Не указана сумма списания
+2023-03-18 00:34:55 ERROR ServiceValidation:34 - Не указана сумма списания
+2023-03-18 00:34:55 ERROR ServiceValidation:34 - Не указана сумма списания
+2023-03-18 00:41:22 INFO  ServiceValidation:41 - Ошибка подтверждения операции
+2023-03-18 00:41:45 INFO  ServiceValidation:41 - Ошибка подтверждения операции
+2023-03-18 00:42:10 INFO  ServiceValidation:41 - Ошибка подтверждения операции
+2023-03-18 00:44:32 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:44:32 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:44:32 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:44:54 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:44:54 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:44:54 ERROR ServiceValidation:46 - Неправльный id операции
+2023-03-18 00:46:53 ERROR ServiceValidation:50 - Неправльный код подтвержедния операции
+2023-03-18 00:46:53 ERROR ServiceValidation:50 - Неправльный код подтвержедния операции
+2023-03-18 00:46:53 ERROR ServiceValidation:50 - Неправльный код подтвержедния операции
+2023-03-18 01:04:21 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=null, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:04:21 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=4234543253252342, cardFromValidTill=3242, cardFromCVV=143, cardToNumber=null, amount=Amount[value=1000, currency=dol]] сохранен в репозиторий под id: 1
+2023-03-18 01:04:21 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1235678679597655, cardFromValidTill=9765, cardFromCVV=564, cardToNumber=null, amount=Amount[value=10000, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:05:05 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=null, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:05:05 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=4234543253252342, cardFromValidTill=3242, cardFromCVV=143, cardToNumber=null, amount=Amount[value=1000, currency=dol]] сохранен в репозиторий под id: 1
+2023-03-18 01:05:05 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1235678679597655, cardFromValidTill=9765, cardFromCVV=564, cardToNumber=null, amount=Amount[value=10000, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:05:46 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=null, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 0
+2023-03-18 01:05:46 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=4234543253252342, cardFromValidTill=3242, cardFromCVV=143, cardToNumber=null, amount=Amount[value=1000, currency=dol]] сохранен в репозиторий под id: 0
+2023-03-18 01:05:46 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1235678679597655, cardFromValidTill=9765, cardFromCVV=564, cardToNumber=null, amount=Amount[value=10000, currency=rub]] сохранен в репозиторий под id: 0
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 0
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 2
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 0
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=4234543253252342, cardFromValidTill=3242, cardFromCVV=143, cardToNumber=12312312312312312, amount=Amount[value=1000, currency=dol]] сохранен в репозиторий под id: 2
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 0
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1234123412341234, cardFromValidTill=1223, cardFromCVV=123, cardToNumber=12312312312312312, amount=Amount[value=100, currency=rub]] сохранен в репозиторий под id: 1
+2023-03-18 01:08:19 INFO  TransferRepositoryImpl:19 - Объект Operation[cardFromNumber=1235678679597655, cardFromValidTill=9765, cardFromCVV=564, cardToNumber=12312312312312312, amount=Amount[value=10000, currency=rub]] сохранен в репозиторий под id: 2
+2023-03-18 01:10:53 INFO  TransferServiceImpl:27 - Операция с id: 10 подтверждена. Перевод выполнен успешно
+2023-03-18 01:11:17 INFO  TransferServiceImpl:27 - Операция с id: 10 подтверждена. Перевод выполнен успешно
+2023-03-18 01:12:56 INFO  TransferServiceImpl:27 - Операция с id: 10 подтверждена. Перевод выполнен успешно
+2023-03-18 01:12:56 ERROR ServiceValidation:50 - Неправльный код подтвержедния операции
+2023-03-18 01:12:56 INFO  TransferServiceImpl:21 - Операция: Operation[cardFromNumber=1234123412341234, cardFromValidTill=12/24, cardFromCVV=234, cardToNumber=4321432143214321, amount=Amount[value=1000, currency=rub]] сохранена под id: 1
