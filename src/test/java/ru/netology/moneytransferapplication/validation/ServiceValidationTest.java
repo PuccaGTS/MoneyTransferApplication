@@ -2,6 +2,7 @@ package ru.netology.moneytransferapplication.validation;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 import ru.netology.moneytransferapplication.exception.TransferException;
@@ -15,47 +16,53 @@ import java.util.stream.Stream;
 public class ServiceValidationTest {
     ServiceValidation serviceValidation;
     @BeforeEach
-    public void init_service_validation(){
+    public void initServiceValidation(){
         serviceValidation = new ServiceValidation();
     }
     @ParameterizedTest
     @MethodSource("nullOperationArguments")
-    public void validTransferService_error_operation_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, которая равна null, ожидается исключение TransferException")
+    public void validOperationNullValue(Operation operation, String id){
         TransferException e = Assertions.assertThrows(TransferException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("Transfer is not available | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullCardToNumberArguments")
-    public void validTransferService_error_operation_card_to_number_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, в поле CardToNumber которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationCardToNumberNull(Operation operation, String id){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("CardTo number is empty | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullCardFromNumberArguments")
-    public void validTransferService_error_operation_card_from_number_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, в поле CardFromNumber которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationCardFromNumberNull(Operation operation, String id){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("CardFrom number is empty | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullCardCVVArguments")
-    public void validTransferService_error_operation_card_cvv_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, в поле CVV которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationCardCvvNull(Operation operation, String id){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("Card CVV is empty | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullCardFromValidTillArguments")
-    public void validTransferService_error_operation_card_from_valid_till_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, в поле cardFromValidTill которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationCardFromValidTillNull(Operation operation, String id){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("CardFromValidTill is empty | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullCardAmountArguments")
-    public void validTransferService_error_operation_card_amount_value_is_null(Operation operation, String id){
+    @DisplayName("Валидация операции, в поле Amount.value которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationCardAmountValueNull(Operation operation, String id){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validTransferService(operation, id));
         String expected = String.format("Money transfer value is 0 | id of post request: %s", id);
         Assertions.assertEquals(e.getMessage(), expected);
@@ -63,21 +70,24 @@ public class ServiceValidationTest {
 
     @ParameterizedTest
     @NullSource
-    public void validConfirmOperationService_error_operation_confirmation_is_null(OperationConfirmation operationConfirmation){
+    @DisplayName("Валидация подтверждения операции, которая равна null, ожидается исключение TransferException")
+    public void validOperationConfirmationNullValue(OperationConfirmation operationConfirmation){
         TransferException e = Assertions.assertThrows(TransferException.class, ()-> serviceValidation.validConfirmOperationService(operationConfirmation));
         String expected = String.format("Error transfer, confirmation is null | id of post request: %s", null);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("nullIdOperationConfirmationArguments")
-    public void validConfirmOperationService_error_operation_confirmation_id_is_null(OperationConfirmation operationConfirmation){
+    @DisplayName("Валидация подтверждения операции, в поле OperationId которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationConfirmationNullId(OperationConfirmation operationConfirmation){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validConfirmOperationService(operationConfirmation));
         String expected = String.format("Wrong Input OperationId | id of post request: %s", null);
         Assertions.assertEquals(e.getMessage(), expected);
     }
     @ParameterizedTest
     @MethodSource("BadCodeOperationConfirmationArguments")
-    public void validConfirmOperationService_error_operation_confirmation_bad_code(OperationConfirmation operationConfirmation){
+    @DisplayName("Валидация подтверждения операции, в поле code которой приходит null, ожидается исключение WrongInputException")
+    public void validOperationConfirmationBadCode(OperationConfirmation operationConfirmation){
         WrongInputException e = Assertions.assertThrows(WrongInputException.class, ()-> serviceValidation.validConfirmOperationService(operationConfirmation));
         String expected = String.format("Bad code of Operation | id of post request: %s", operationConfirmation.operationId());
         Assertions.assertEquals(e.getMessage(), expected);
